@@ -69,15 +69,25 @@ une fonction personnalisée.<br>
         echo "<tr><th>Pays</th><th>Capitale</th></tr>";
     
         // Puis parcourir le tableau POUR TRIER / PUIS AFFICHER (echo) chaque ligne 
+        /* Les balise <tr> et <td> sont utilisées pour créer des lignes dans un tableau ultérieurement affichable.
+
+        <tr> Cette balise appartient à la règle "Table Row" / En français Ligne de tableau
+                Elle est utilisée pour ouvrir une ligne. Début avec <tr> et fin avec </tr>
+
+        <td> Cette balise appartient à la règle "Table Data" / En français Cellule de tableau
+                Elle est utilisée pour fermer une ligne. Début avec <td> et fin avec </td>
+        */
+
+        // Cette boucle est utilisée pour trier/lier les pays avec leurs capitales respectives en suivant la règles de la clé et la variables.
         foreach ($capitales as $pays => $capitale) {
 
         // strtoupper pour la modification des caractères en majuscules / Le restant des caractères obéissent aux styles précédemment définis.
         echo "<tr><td>" . strtoupper($pays) . "</td><td>" . $capitale . "</td></tr>";
         }
         
-    // APPELER/CREER la FIN du tableau HTML
-    echo "</table>";
-    }
+        // APPELER/CREER la FIN du tableau HTML
+        echo "</table>";
+        }
 
     ?>
 
