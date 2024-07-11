@@ -6,7 +6,7 @@
     <title>Exercice 1 PHP 2</title>
     <style>
         p {
-            font-weight: lighter;
+            font-weight: normal;
         }
         .red {
             color: red;
@@ -20,7 +20,7 @@
     caractère passée en argument en majuscules et en rouge.<br>
     <br>Vous devrez appeler la fonction comme suit : convertirMajRouge($texte) ;
     <br>Affichage (si $texte = « Mon texte en paramètre »)<br>
-    MON TEXTE EN PARAMETRE
+    MON TEXTE EN PARAMETRE.
     </p>
     
     <?php
