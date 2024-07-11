@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice 2 PHP 2</title>
     <style>
-        p {
-            font-weight: normal;
+        
+        p { 
+            font-weight: lighter;
         }
         .red {
             color: red;
@@ -30,7 +31,7 @@
 
     <h1>II. Exercice 2 : Tableau des Capitales</h1>
     <p>Soit le tableau suivant :<br>
-    
+
 $capitales = array<br>
 
 ("France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome");<br>
@@ -46,8 +47,21 @@ une fonction personnalisée.<br>
     </p>
     
     <?php
-    function afficherTableHTML($capitales) {
-        // Trier le tableau par ordre alphabétique des clés (pays)
+    // Appeler la fonction pour créer le tableau HTML des capitales, pour l'afficher plus tard (pour être stylysé et apparaître)
+    afficherTableHTML($capitales);
+    
+            // Ajouter la fonction personnalisée devant être nommée "afficherTableHTML($capitales)"
+        function afficherTableHTML($capitales) {
+
+        // Compléter le tableau associatif en liant les pays aux différentes capitales
+        $capitales = array(
+            "France" => "Paris",
+            "Allemagne" => "Berlin",
+            "USA" => "Washington",
+            "Italie" => "Rome",
+        );            
+
+        // Utiliser la fonction ksort($______) pour trier les éléments du tableau par ordre alphabétique selon les pays (clés)
         ksort($capitales);
         
         // Début du tableau HTML
@@ -63,16 +77,6 @@ une fonction personnalisée.<br>
         echo "</table>";
     }
 
-    // Tableau des capitales
-    $capitales = array(
-        "France" => "Paris",
-        "Allemagne" => "Berlin",
-        "USA" => "Washington",
-        "Italie" => "Rome"
-    );
-
-    // Appel de la fonction pour afficher le tableau HTML
-    afficherTableHTML($capitales);
     ?>
 
 </body>
