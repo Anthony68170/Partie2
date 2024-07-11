@@ -47,34 +47,36 @@ une fonction personnalisée.<br>
     </p>
     
     <?php
+    // Compléter le tableau associatif en liant les pays aux différentes capitales
+    $capitales = array(
+        "France" => "Paris",
+        "Allemagne" => "Berlin",
+        "USA" => "Washington",
+        "Italie" => "Rome",
+    );            
+
     // Appeler la fonction pour créer le tableau HTML des capitales, pour l'afficher plus tard (pour être stylysé et apparaître)
     afficherTableHTML($capitales);
-    
-            // Ajouter la fonction personnalisée devant être nommée "afficherTableHTML($capitales)"
-        function afficherTableHTML($capitales) {
 
-        // Compléter le tableau associatif en liant les pays aux différentes capitales
-        $capitales = array(
-            "France" => "Paris",
-            "Allemagne" => "Berlin",
-            "USA" => "Washington",
-            "Italie" => "Rome",
-        );            
+    // Ajouter la fonction personnalisée devant être nommée "afficherTableHTML($capitales)"
+    function afficherTableHTML($capitales) {
 
         // Utiliser la fonction ksort($______) pour trier les éléments du tableau par ordre alphabétique selon les pays (clés)
         ksort($capitales);
         
-        // Début du tableau HTML
+        // APPELER/CREER le DEBUT du tableau HTML
         echo "<table>";
         echo "<tr><th>Pays</th><th>Capitale</th></tr>";
-        
-        // Parcourir le tableau trié et afficher chaque ligne
+    
+        // Puis parcourir le tableau POUR TRIER / PUIS AFFICHER (echo) chaque ligne 
         foreach ($capitales as $pays => $capitale) {
-            echo "<tr><td>" . strtoupper($pays) . "</td><td>" . $capitale . "</td></tr>";
+
+        // strtoupper pour la modification des caractères en majuscules / Le restant des caractères obéissent aux styles précédemment définis.
+        echo "<tr><td>" . strtoupper($pays) . "</td><td>" . $capitale . "</td></tr>";
         }
         
-        // Fin du tableau HTML
-        echo "</table>";
+    // APPELER/CREER la FIN du tableau HTML
+    echo "</table>";
     }
 
     ?>
