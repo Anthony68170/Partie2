@@ -2,12 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <!-- Avec meta name = "viewport" on permet le controle des dimensions et échelles en donnant des instructions au navigateur -->
+    <!-- Avec "content" on définit la hauteur et la largeur de l'appareil de l'utilisateur-->
+    <!-- initial-scale=1.0 : Définit le niveau de zoom initial lorsque la page est chargée pour la première fois par le navigateur. Une valeur de 1.0 signifie qu'il n'y a pas de zoom (1:1) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice 1 PHP 2</title>
     <style>
+        /* Style pour les paragraphes, avec une police plus légère */
         p {
             font-weight: lighter;
         }
+        /* Style pour le texte rouge */
         .red {
             color: red;
         }
@@ -16,29 +21,33 @@
 <body>
 
     <h1>I. Exercice 1 : Fonction Personnalisée</h1>
-    <p>Créer une fonction personnalisée convertirMajRouge() permettant de transformer une chaîne de
-    caractère passée en argument en majuscules et en rouge.<br>
-    <br>Vous devrez appeler la fonction comme suit : convertirMajRouge($texte) ;
-    <br>Affichage (si $texte = « Mon texte en paramètre »)<br>
-    <br>MON TEXTE EN PARAMETRE.
+    <p>
+        Créer une fonction personnalisée convertirMajRouge() permettant de transformer une chaîne de
+        caractères passée en argument en majuscules et en rouge.<br>
+        <br>Vous devrez appeler la fonction comme suit : convertirMajRouge($texte);<br>
+        Affichage (si $texte = « Mon texte en paramètre ») - Alors => "MON TEXTE EN PARAMETRE".
     </p>
     
     <?php
 
-    // Ajouter une fonction personnalisée ()
-    function convertirMajRouge($texte) {
-        // Modifier le texte en majuscule avec la fonction "strtoupper" (en minuscule => strlower)
-        $texte = mb_strtoupper($texte); // L'option "mb_" devant la fonction strtoupper, perùet de prendre en charge les caractères spéciaux comme "è" de "paramètre"
-
-        // Reprendre la chaîne de caractère avec la fonction "RETURN" 
-        // Puis modifier en rouge du texte grâce à la fonction "SPAN"
-        // (span) Ne pas oublier d'appeler la "Class" de style nouvellement créée dans la section "style"
-        return "<span class='red'>$texte</span>";
-    }
-    // Enregistrer le texte dans un iD (pour le faire apparaître plus tard)
+    // Définir la variable $texte avec la chaîne de caractères initiale
+    // Cette variable "$texte" contient le texte à transformer
     $texte = "Mon texte en paramètre.";
 
-    // Faire apparaître le texte, modifié selon les critères de style précédents 
+    // Déclaration de la fonction personnalisée convertirMajRouge()
+    function convertirMajRouge($texte) {
+        
+        // Convertir le texte en majuscules en utilisant mb_strtoupper pour gérer les caractères spéciaux.
+        // Remarque : strtoupper transforme la chaîne en majuscules sans gérer les caractères spéciaux.
+        $texte = mb_strtoupper($texte); 
+
+        // Retourner le texte encapsulé dans une balise span avec la classe CSS 'red' pour le rendre rouge.
+        // Le texte est retourné pour être affiché avec les modifications appliquées.
+        return "<span class='red'>$texte</span>";
+    }
+    echo "Résultat : <br>";
+    // Afficher le texte transformé en appelant la fonction convertirMajRouge().
+    // Le texte est transformé grâce à l'appel de la fonction convertirMajRouge.
     echo convertirMajRouge($texte);
     ?>
 
