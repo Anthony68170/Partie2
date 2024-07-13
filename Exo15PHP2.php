@@ -14,8 +14,12 @@
     // Adresse e-mail à vérifier
     $email = "elan@elan-formation.fr";
 
-    // ATTENTION / Peut Etre très utile
-    // // Vérification du domaine ProtonMail
+
+                        // ATTENTION Peut Etre très utile
+
+
+    // // Vérification du domaine ProtonMail / Tutanota / RIPP Privé
+
     //if (filter_var($email, FILTER_VALIDATE_EMAIL) && strpos($email, '@protonmail.com') !== false) {
     //    echo "L'adresse $email est une adresse e-mail valide de ProtonMail";
    // } else {
@@ -23,7 +27,7 @@
    // }
 
 
-    // Utiliser filter_var pour valider l'adresse e-mail
+    // Utiliser l'algo de vérification filter_var pour valider l'adresse e-mail
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "L'adresse $email est une adresse e-mail valide";
     } else {

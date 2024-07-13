@@ -12,7 +12,7 @@
         p {
             font-weight: lighter;
         }
-        /* Style pour le texte rouge */
+        /* Style pour le texte rouge - Différents styles existent avec bien plus de choix*/
         .red {
             color: red;
         }
@@ -30,7 +30,7 @@
     
     <?php
 
-    // Définir la variable $texte avec la chaîne de caractères initiale
+    // (Créer Puis Définir) la (variable) ($texte) avec la (chaîne de caractères) initiale
     // Cette variable "$texte" contient le texte à transformer
     $texte = "Mon texte en paramètre.";
 
@@ -41,7 +41,7 @@
         // Remarque : strtoupper transforme la chaîne en majuscules sans gérer les caractères spéciaux.
         $texte = mb_strtoupper($texte); 
 
-        // Retourner le texte encapsulé dans une balise span avec la classe CSS 'red' pour le rendre rouge.
+        // Retourner le texte (encapsulé) dans des (balises) (span) avec la (classe CSS) 'red' pour le rendre rouge.
         // Le texte est retourné pour être affiché avec les modifications appliquées.
         return "<span class='red'>$texte</span>";
     }
